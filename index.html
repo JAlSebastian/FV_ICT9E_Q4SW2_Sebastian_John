@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <title>Q4 Practice 3</title>
+    <style>
+        #box {
+            text-align: center;
+            border: 2px solid black;
+            width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        #fontsize{
+            font-size: 40px;
+        }
+        body{
+            background-image: url(https://img.freepik.com/free-photo/top-view-calculator-notebook-frame_23-2149103980.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: inherit;
+        }
+        h2{
+            font-family: inherit;
+            color: green;
+            font-size: 50px;
+        }
+        .form-group{
+            text-align: center;
+        }
+        .form-control{
+            display: inline-block;
+            width: 80px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <div id="box">
+        <h2>Hi! I am a calculator</h2>
+        <p>Enter the values of x and y and pick a command that you want me to do</p>
+        <div class="form-group">
+            <label>Value of x:</label>
+            <br>
+            <input type="number" class="form-control" id="x">
+        </div>
+        <div class="form-group">
+            <label>Value of y:</label>
+            <br>
+            <input type="number" class="form-control" id="y">
+        </div>
+    </div>
+    <br>
+    <div id="commands">
+    <button class="btn" onclick="Add()" style="background-color: blue;" id="fontsize">Add x and y</button>
+    <br>
+    <button class="btn" onclick="greater()" style="background-color: red;" id="fontsize">Is x greater than y</button>
+    <br>
+    <button class="btn" onclick="square()" style="background-color: lightgreen;" id="fontsize">x raised to 2</button>
+    <br>
+    <button class="btn" onclick="equal()" style="background-color: orange;" id="fontsize">Is x not equal to y</button>
+    </div>
+    <script type="text/javascript">
+        function Add(){
+            var x = document.getElementById('x').value;
+            var y = document.getElementById('y').value;
+            var sum = Number(x) + Number(y);
+
+            window.alert('The sum of the two numbers is ' + sum);
+        }
+
+         function greater(){
+            var x = document.getElementById('x').value;
+            var y = document.getElementById('y').value;
+            var answer = Number(x) > Number(y);
+
+            window.alert('The statement x is greater than y is ' + answer);
+        }
+
+         function square(){
+            var x = document.getElementById('x').value;
+            var answer = Number(x)**2;
+
+            window.alert('The square of x is ' + answer);
+        }
+
+         function equal(){
+            var x = document.getElementById('x').value;
+            var y = document.getElementById('y').value;
+            var answer = !(x == y);
+
+            window.alert('The statement x is not equal to y is ' + answer);
+        }
+    </script>
+</center>
+</body>
+</html>
